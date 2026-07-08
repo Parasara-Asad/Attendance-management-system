@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Attendance Management System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="text-end">Created by parasara Asad</div>
+    <p class="h2 text-center">Welcome Attendance Management System</p>
+    <div
+      class="container-fluid border border-2 border border-primary rounded-3 mt-5 p-3 w-50 text-center"
+    >
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3">
+            <div class="mb-3">
+              <label for="userAge" class="form-label"
+                >Enter start Attendance</label
+              >
+              <input type="number" class="form-control" id="start" />
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3">
+            <div class="mb-3">
+              <label for="userAge" class="form-label"
+                >Enter End Attendance</label
+              >
+              <input type="number" class="form-control" id="end" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-around mt-3">
+        <button
+          type="button"
+          class="btn btn-success"
+          id="presentall"
+          onclick="allpresent()"
+        >
+          All Present
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="GenerateNumber()"
+        >
+          Generate Attendance
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          onclick="clearattendance()"
+        >
+          clear All
+        </button>
+      </div>
+    </div>
+    <div
+      class="container-fluid border border-2 border border-primary p-3 w-50 mt-2"
+    >
+      <div class="row">
+        <div class="col-6 selectbox border border-primary"></div>
+        <div class="col-6 border border-primary">
+          <div class="row">
+            <div class="col-12 Presentlist"></div>
+            <div class="col-12 absentlist"></div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="getattendance"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
