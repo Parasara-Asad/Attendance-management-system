@@ -63,7 +63,7 @@ function getatt() {
             readonly
             disabled
             rows="30"
-            style="height: 400px" >${output1}</textarea>
+            style="height: 200px" >${output1}</textarea>
             </div>
             <p class="h3 mt-5" >Total present student: ${countpresent} </p>
       `;
@@ -79,7 +79,7 @@ function getatt() {
 
   absentlist.innerHTML = `
           <div class="form-floating">
-            <label>Present Students</label>
+            <label>Absent Students</label>
             <br>
             <br>
             <textarea class="form-control"
@@ -87,7 +87,7 @@ function getatt() {
             readonly
             disabled
             rows="30"
-            style="height: 400px" >${output2}</textarea>
+            style="height: 200px" >${output2}</textarea>
             </div>
             <p class="h3 mt-2" >Total Absent student: ${countabsent} </p>
   `;
