@@ -56,25 +56,6 @@ git clone https://github.com/Parasara-Asad/Attendance-management-system.git
 
 ---
 
-## 📷 Screenshot
-
-> Add your project screenshot here.
-
-Example:
-
-```
-Attendance-Management-System/
-│── screenshot.png
-```
-
-Then use:
-
-```markdown
-![Attendance Management System](screenshot.png)
-```
-
----
-
 ## 📌 Future Improvements
 
 - Store attendance using Local Storage
