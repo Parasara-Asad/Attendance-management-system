@@ -1,102 +1,93 @@
+const box = document.getElementById("box");
+const btn = document.getElementById("btn");
+const shownumber = document.querySelector("span");
+const presentcount = document.getElementById("presentcount");
+const absentcount = document.getElementById("absentcount");
+const presentlist = document.getElementById("presentlist");
+const absentlist = document.getElementById("absentlist");
+const h4 = document.getElementsByTagName("h4");
+
+let attendance = {};
+let start;
+let end;
+
+let presentStudents = 0;
+let absentStudents = 0;
+
 function GenerateNumber() {
-  let selectbox = document.querySelector(".selectbox");
-  let list = document.querySelector(".list");
-  let start = Number(document.getElementById("start").value);
-  let end = Number(document.getElementById("end").value);
-  let output = "";
-  for (let i = start; i <= end; i++) {
-    output += `
-    <div class="form-check">
-            <input class="form-check-input student border border-2"
-            type="checkbox"
-            value="${i}"
-            id="roll${i}">
-            <label class="form-check-label" for="roll${i}">
-            ${i}
-            </label>
-            </div>
-            `;
-          }
-  selectbox.innerHTML = output;
-  selectbox.style.border = "2px solid black";
-  list.style.border = "2px solid black";
-  let getattendance = document.querySelector(".getattendance");
-  getattendance.innerHTML = `
-  <button type="button" class="btn btn-info mt-2 border border-2 border border-dark" onclick="getatt()">
-  Get Attendance
-  </button>
+  start = Number(document.getElementById("start").value);
+  end = Number(document.getElementById("end").value);
+  shownumber.innerHTML = start;
+
+  box.style.display = "block";
+  btn.style.display = "block";
+  shownumber.style.display = "block";
+  presentcount.style.display = "block";
+  absentcount.style.display = "block";
+  presentlist.style.display = "block";
+  absentlist.style.display = "block";
+  h4[0].style.display = "block";
+  h4[1].style.display = "block";
+  presentStudents = 0;
+  absentStudents = 0;
+
+  attendance = {};
+
+  presentlist.innerHTML = "";
+  absentlist.innerHTML = "";
+
+  presentcount.innerHTML = `Present Students: ${presentStudents}`;
+  absentcount.innerHTML = `Absent Students: ${absentStudents}`;
+}
+function next() {
+  if (start < end) {
+    start++;
+    shownumber.innerHTML = start;
+  } else {
+    alert("End number reached!");
+  }
+}
+
+function previous() {
+  const firstRoll = Number(document.getElementById("start").value);
+
+  if (start > firstRoll) {
+    start--;
+    shownumber.innerHTML = start;
+  } else {
+    alert("Start number reached!");
+  }
+}
+
+function present() {
+  if (attendance[start]) {
+    alert("Attendance already marked!");
+    return;
+  }
+
+  attendance[start] = "Present";
+
+  presentStudents++;
+
+  presentcount.innerHTML = `Present Students: ${presentStudents}`;
+
+  presentlist.innerHTML += `
+    <div class="badge bg-success m-1">${start}</div>
   `;
 }
-function allpresent() {
-  let start = Number(document.getElementById("start").value);
-  let end = Number(document.getElementById("end").value);
-  
-  for (let i = start; i <= end; i++) {
-    document.getElementById("roll" + i).checked = true;
+function absent() {
+  if (attendance[start]) {
+    alert("Attendance already marked!");
+    return;
   }
-}
-function clearattendance() {
-  let start = Number(document.getElementById("start").value);
-  let end = Number(document.getElementById("end").value);
-  
-  for (let i = start; i <= end; i++) {
-    document.getElementById("roll" + i).checked = false;
-  }
-}
-function getatt() {
-  let selectbox = document.querySelector(".selectbox");
-  let start = Number(document.getElementById("start").value);
-  let end = Number(document.getElementById("end").value);
-  let Presentlist = document.querySelector(".Presentlist");
-  let absentlist = document.querySelector(".absentlist");
-  let abcount = document.querySelector(".abcount");
-  let precount = document.querySelector(".precount");
-  let output1 = "";
-  let countpresent = 0;
-  for (let i = start; i <= end; i++) {
-    if (document.getElementById("roll" + i).checked) {
-      output1 += i + " ,";
-      countpresent++;
-    }
-  }
-  Presentlist.innerHTML = `
-            <div class="form-floating">
-            <label>Present Students</label>
-            <br>
-            <br>
-            <textarea class="form-control"
-            id="floatingTextarea2"
-            readonly
-            disabled
-            rows="30"
-            style="height: 200px" >${output1}</textarea>
-            </div>
-            <p class="h3 mt-5" >Total present student: ${countpresent} </p>
-      `;
 
-  let output2 = "";
-  let countabsent = 0;
-  for (let i = start; i <= end; i++) {
-    if (!document.getElementById("roll" + i).checked) {
-      output2 += i + " ,";
-      countabsent++;
-    }
-  }
-  absentlist.innerHTML = `
-          <div class="form-floating">
-            <label>Absent Students</label>
-            <br>
-            <br>
-            <textarea class="form-control "
-            id="floatingTextarea2"
-            readonly
-            disabled
-            rows="30"
-            style="height: 200px" >${output2}</textarea>
-            </div>
-            <p class="h3 mt-2" >Total Absent student: ${countabsent} </p>
+  attendance[start] = "Absent";
+
+  absentStudents++;
+
+  absentcount.innerHTML = `Absent Students: ${absentStudents}`;
+
+  absentlist.innerHTML += `
+    <div class="badge bg-danger m-1">${start}</div>
   `;
-
-  precount.innerHTML = ` <button type="button" class="btn btn-success mt-2 border border-2 border border-dark">Total present student:${countpresent}</button>`;
-  abcount.innerHTML = ` <button type="button" class="btn btn-danger mt-2 border border-2 border border-dark">Total Absent student:${countpresent}</button>`;
 }

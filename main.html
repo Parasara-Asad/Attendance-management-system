@@ -41,43 +41,67 @@
       <div class="d-flex justify-content-around mt-3">
         <button
           type="button"
-          class="btn btn-success"
-          id="presentall"
-          onclick="allpresent()"
-        >
-          All Present
-        </button>
-        <button
-          type="button"
           class="btn btn-primary"
           onclick="GenerateNumber()"
         >
           Generate Attendance
         </button>
-        <button
-          type="button"
-          class="btn btn-danger"
-          onclick="clearattendance()"
-        >
-          clear All
-        </button>
       </div>
     </div>
     <div
-      class="container-fluid p-3 w-50 mt-2"
+      class="container-fluid border border-2 border-dark rounded-circle mt-5 text-center"
+      id="box"
     >
+      <span></span>
+    </div>
+    <div class="container-fluid w-50" id="btn">
+      <div class="d-flex justify-content-evenly mt-5">
+        <button type="button" class="btn btn-primary" onclick="previous()">
+          Previous
+        </button>
+        <button type="button" class="btn btn-danger" onclick="absent()">
+          Absent
+        </button>
+        <button type="button" class="btn btn-success" onclick="present()">
+          Present
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="next"
+          onclick="next()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div class="container-fluid w-100 mt-5">
+      <div class="d-flex justify-content-center mt-5">
+        <button type="button" class="btn btn-success me-5" id="presentcount">
+          Present student:
+        </button>
+        <button type="button" class="btn btn-danger" id="absentcount">
+          absent student:
+        </button>
+      </div>
+    </div>
+    <div class="container mt-5 text-center w-50">
       <div class="row">
-        <div class="col-6 selectbox"></div>
-        <div class="col-6 list">
-          <div class="row">
-            <div class="col-12 Presentlist"></div>
-            <div class="col-12 absentlist"></div>
-          </div>
+        <div class="col-6 mb-5">
+          <h4 class="text-success text-center h4">Present List</h4>
+          <div
+            id="presentlist"
+            class="border border-2 border-success rounded p-3"
+            style="min-height: 150px"
+          ></div>
         </div>
-        <div class="d-flex justify-content-between">
-          <div class="abcount"></div>
-          <div class="getattendance"></div>
-          <div class="precount"></div>
+        <div class="col-6 mb-5">
+          <h4 class="text-danger text-center h4">Absent List</h4>
+          <div
+            id="absentlist"
+            class="border border-2 border-danger rounded p-3"
+            style="min-height: 150px"
+          ></div>
         </div>
       </div>
     </div>

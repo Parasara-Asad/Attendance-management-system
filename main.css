@@ -1,25 +1,208 @@
 .selectbox {
   font-size: larger;
 }
-html, body {
-  width: 100%;
-  height:100%;
-}
-
+html,
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+  width: 100%;
+  height: 100%;
+}
+#box{
+  height: 18vh;
+  width: 8%;
+  display: none;
+}
+#btn{
+  display: none;
+}
+#presentcount,#absentcount,#presentlist,#absentlist{
+  display: none;
+}
+h4{
+  display: none;
+}
+span{
+  font-size: 80px;
+  font-weight: 400;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+.selectbox {
+  font-size: larger;
+}
+
+
+/* Ai code Start */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+  color: #ffffff;
+}
+
+/* Created By */
+.text-end {
+  color: #dbeafe;
+  padding: 15px 20px;
+  font-weight: bold;
+}
+
+/* Heading */
+.h2 {
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,.5);
+}
+
+/* Main Box */
+.container-fluid.border {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.2) !important;
+  color: white;
+}
+
+/* Labels */
+.form-label {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+/* Inputs */
+.form-control {
+  background: rgba(255,255,255,.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.form-control:focus {
+  background: rgba(255,255,255,.2);
+  color: white;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: #2563eb;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: #16a34a;
+}
+
+.btn-success:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: #dc2626;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+/* Roll Number Circle */
+#box {
+  height: 18vh;
+  width: 8%;
+  display: none;
+  margin: 40px auto;
+  background: white;
+  border: 6px solid #38bdf8 !important;
+  box-shadow: 0 0 30px rgba(56,189,248,.6);
+  color: #1e3a8a;
+}
+
+span {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 18vh;
+}
+
+/* Buttons Area */
+#btn {
+  display: none;
+}
+
+/* Counter Buttons */
+#presentcount,
+#absentcount {
+  display: none;
+  font-size: 18px;
+  padding: 12px;
+}
+
+/* Lists */
+#presentlist,
+#absentlist {
+  display: none;
+  background: rgba(255,255,255,.08);
+  color: white;
+}
+
+#presentlist {
+  border-color: #22c55e !important;
+}
+
+#absentlist {
+  border-color: #ef4444 !important;
+}
+
+/* List Heading */
+.h4 {
+  display: none;
+  font-weight: bold;
+}
+
+/* Badges */
+.badge {
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+  .container-fluid.w-50,
+  .container.w-50,
+  .container-fluid.w-25{
+      width:95%!important;
+  }
+
+  #box{
+      width:120px;
+      height:120px;
+  }
+
+  span{
+      font-size:55px;
+      line-height:120px;
+  }
 }
