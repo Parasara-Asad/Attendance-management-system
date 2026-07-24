@@ -6,6 +6,7 @@ const absentcount = document.getElementById("absentcount");
 const presentlist = document.getElementById("presentlist");
 const absentlist = document.getElementById("absentlist");
 const h4 = document.getElementsByTagName("h4");
+const reloadbtn = document.getElementById("reloadbtn");
 
 let attendance = {};
 let start;
@@ -28,6 +29,7 @@ function GenerateNumber() {
   absentlist.style.display = "block";
   h4[0].style.display = "block";
   h4[1].style.display = "block";
+  reloadbtn.style.display = "block";
   presentStudents = 0;
   absentStudents = 0;
 
@@ -74,6 +76,7 @@ function present() {
   presentlist.innerHTML += `
     <div class="badge bg-success m-1">${start}</div>
   `;
+  next();
 }
 function absent() {
   if (attendance[start]) {
@@ -88,6 +91,11 @@ function absent() {
   absentcount.innerHTML = `Absent Students: ${absentStudents}`;
 
   absentlist.innerHTML += `
-    <div class="badge bg-danger m-1">${start}</div>
+  <div class="badge bg-danger m-1">${start}</div>
   `;
+  next();
+}
+
+function reloadweb() {
+  location.reload();
 }

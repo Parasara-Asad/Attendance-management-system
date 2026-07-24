@@ -7,14 +7,14 @@ body {
   height: 100%;
 }
 #box{
-  height: 18vh;
-  width: 8%;
+  height: 20vh;
+  width: 10%;
   display: none;
 }
 #btn{
   display: none;
 }
-#presentcount,#absentcount,#presentlist,#absentlist{
+#presentcount,#absentcount,#presentlist,#absentlist,#reloadbtn{
   display: none;
 }
 h4{
